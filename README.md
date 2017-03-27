@@ -55,8 +55,31 @@ mbed compile -m K64F -t GCC_ARM
 Your PC may take a few minutes to compile your code. At the end, you see the following result:
 
 	[snip]
-	todo: paste snippet here
+	Link: mbed-os-example-i2ceeprom-driver
+	Elf2Bin: mbed-os-example-i2ceeprom-driver
+	+--------------------------+-------+-------+-------+
+	| Module                   | .text | .data |  .bss |
+	+--------------------------+-------+-------+-------+
+	| Fill                     |    78 |     4 |  2449 |
+	| Misc                     | 33150 |  2212 |   116 |
+	| drivers                  |   574 |     0 |    32 |
+	| features/storage         |    42 |     0 |   184 |
+	| hal                      |   450 |     0 |     8 |
+	| platform                 |  1232 |     4 |   269 |
+	| rtos                     |   135 |     4 |     4 |
+	| rtos/rtx                 |  5915 |    20 |  6870 |
+	| targets/TARGET_Freescale | 12304 |    12 |   388 |
+	| Subtotals                | 53880 |  2256 | 10320 |
+	+--------------------------+-------+-------+-------+
+	Allocated Heap: 24576 bytes
+	Allocated Stack: unknown
+	Total Static RAM memory (data + bss): 12576 bytes
+	Total RAM memory (data + bss + heap + stack): 37152 bytes
+	Total Flash memory (text + data + misc): 57176 bytes
 	
+	Image: .\BUILD\K64F\GCC_ARM\mbed-os-example-i2ceeprom-driver.bin
+
+
 ## <a name="run-the-example-binary-on-the-k64f"></a> Run the Example Binary on the K64F 
 
 Copy the binary from `<root_dir>/mbed-os-example-i2ceeprom-driver/BUILD/K64F/GCC_ARM/mbed-os-example-i2ceeprom-driver.bin` to the K64F:
@@ -68,7 +91,11 @@ Copy the binary from `<root_dir>/mbed-os-example-i2ceeprom-driver/BUILD/K64F/GCC
 
 After connecting a serial console and resetting the target, the following trace should be seen:
 
-	<to be updated>
+	i2cee size: 32768
+	i2cee read size: 1
+	i2cee program size: 1
+	i2cee erase size: 1
+	Hello World!
 
 
 # Troubleshooting
