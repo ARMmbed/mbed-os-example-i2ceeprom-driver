@@ -32,14 +32,14 @@ int main() {
     printf("i2cee erase size: %llu\n",   i2cee.get_erase_size());
 
     // Write "Hello World!" to the first block
-    uint8_t *buffer = malloc(i2cee.get_erase_size());
-    sprintf(buffer, "Hello World!\n");
+    void *buffer = malloc(i2cee.get_erase_size());
+    sprintf((char*) buffer, "Hello World!\n");
     i2cee.erase(0, i2cee.get_erase_size());
     i2cee.program(buffer, 0, i2cee.get_erase_size());
 
     // Read back what was stored
     i2cee.read(buffer, 0, i2cee.get_erase_size());
-    printf("%s", buffer);
+    printf("%s", (char*) buffer);
 
     // Deinitialize the device
     i2cee.deinit();
