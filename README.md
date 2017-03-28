@@ -38,12 +38,6 @@ If the mbed-os library was not automatically added (see trace above), do the fol
 mbed new .
 ```
 
-Add the i2ceeprom-driver repository: 
-
-```
-mbed add i2ceeprom-driver
-```
-
 ## Build the Example
 
 Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the GCC_ARM toolchain:
